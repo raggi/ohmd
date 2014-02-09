@@ -1,0 +1,22 @@
+ohmd - an OpenHMD wrapper for go
+
+A quick example:
+
+	c := ohmd.New()
+	c.Probe()
+	d, _ := c.ListOpenDevice(0)
+	for {
+		c.Update()
+		q, _ := d.Getf(ohmd.ROTATION_QUAT)
+		fmt.Printf("%v\n", q)
+		time.Sleep(1 / 60 * time.Second)
+	}
+
+See the following locations for documentation:
+
+	http://godoc.org/github.com/raggi/ohmd
+	http://http://openhmd.net/
+
+See ohmd_test.go for an Example:
+	https://github.com/raggi/ohmd/blob/master/ohmd_test.go
+
